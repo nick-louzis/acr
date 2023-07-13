@@ -16,12 +16,12 @@ function Story() {
       </h3>   
     </div>
     
-    <div className="h-[300px] w-[300px] mt-9 mx-auto lg:w-2/4">
-    <img src={family} className="rounded-md shadow-md w-[80%] mx-auto"/>
+    <div className="h-[500px] w-[300px] md:w-[400px] mt-9 mx-auto lg:w-2/4">
+    <img src={family} className="rounded-md sm:h-[80%] shadow-md max-w-[80%] md:w-auto h-auto mx-auto"/>
     </div>
     </div>
 
-    <Store />
+    <Store/>
     </>
     
   )
