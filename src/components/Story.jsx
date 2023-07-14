@@ -12,7 +12,7 @@ function Story() {
       <h3 className=' mx-8 mt-2 text-orange-400 md:text-[18px] lg:text-[20px]'>  Thanasis, Sarah and family, welcome you to the island of Skiathos. We have been renting, servicing, buying and selling motorbikes since 1989. Starting from a little coffee shop in the area of Acropolis and the name Acropolis has stuck with us ever since.  
       Acropolis motorbikes have the best reputation on the island to locals and tourists alike.
       We would love it if you contacted us for any information you would like to know.
-      We try to explain the island to you as best we can, So you get to see the most of the island we love!
+      We try to explain the island to you as best we can, So you get to see the most of the island we love!!
       </h3>   
     </div>
     
