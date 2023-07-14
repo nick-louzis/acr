@@ -1,6 +1,6 @@
 import React from 'react';
 import scooter from './scooter';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -10,16 +10,27 @@ import 'swiper/css/pagination';
 import Motodesc from './Motodesc';
 
 function Carousel() {
+
+    const ref = useRef(null);
+    useEffect(() =>{
+      console.log(ref)
+    },[])
+
   // console.log(scooter)
   const [isHidden,setIsHidden] = useState(true)
-  function setCurrent(){
+  function changeCurrent(){
     setIsHidden(!isHidden)
   }
 
 
   return (
     <div className='bg-[rgb(127, 205, 205)] w-full relative'>
-    <h2 className='text-center text-[32px] font-semibold text-orange-400 mt-5'>Scooters For Rent</h2>
+    <h2 className='text-center text-[32px] font-semibold text-orange-400 mt-5'>Motorbikes For Rent</h2>
+    
+  {    (window.innerWidth > 500) ?
+    <span className='w-4/6 mx-auto mt-4 shadow-2xl h-[2px] bg-orange-300 block'></span>
+    : ""
+  }    
     <Swiper
     className='h-[350px] w-[80%] rign-0 mt-10 lg:h-[800px]'
     modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -42,7 +53,9 @@ function Carousel() {
         </div>
         :<span className=' '>
           <Motodesc info = {scooter}
-                    setCurrent = {setCurrent}
+                    changeCurrent = {changeCurrent}
+                    isHidden={isHidden}
+                    
                     />
         </span>
       }
@@ -53,11 +66,16 @@ function Carousel() {
     
     
   </Swiper>
+  {
+  (isHidden)?
   <button className='absolute left-[50%] z-50 translate-x-[-50%] 
             bottom-[50px] font-semibold shadow-md
             mx-auto bg-transparent p-1 rounded-md text-center text-sm text-blue-400 ring-1
             ' onClick={()=>{setIsHidden(!isHidden)
             console.log(isHidden)}}>Show more</button>
+
+            : ""
+  }
   </div>
 
   )

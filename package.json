@@ -1,4 +1,5 @@
 {
+  "homepage":"https://maria-magdalini.github.io/acr",
   "name": "acr",
   "private": true,
   "version": "0.0.0",
@@ -7,9 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "simple-parallax-js": "^5.6.2",
@@ -23,6 +27,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
+    "gh-pages": "^5.0.0",
     "postcss-import": "^15.1.0",
     "tailwindcss": "^3.3.2",
     "vite": "^4.4.0"
