@@ -4,7 +4,7 @@ import gforce from '../assets/atvs/Cforce-450cc.avif'
 
 import sym50 from '../assets/scooters/Symphony-50cc.avif'
 import sym125 from '../assets/scooters/Symphony-125cc.avif'
-import sym200 from '../assets/scooters/symphony-200cc.avif'
+import sym200 from '../assets/scooters/Symphony-200cc.avif'
 import vision from '../assets/scooters/vision.avif'
 import people from '../assets/scooters/peoples.avif'
 
