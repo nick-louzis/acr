@@ -12,6 +12,9 @@ import Motodesc from './Motodesc';
 function Carousel() {
   // console.log(scooter)
   const [isHidden,setIsHidden] = useState(true)
+  function setCurrent(){
+    setIsHidden(!isHidden)
+  }
 
 
   return (
@@ -25,27 +28,34 @@ function Carousel() {
     navigation
     pagination={{ clickable: true }}
     scrollbar={{ draggable: true }}
-    onSwiper={(swiper) => console.log(swiper)}
-    onSlideChange={() => console.log('slide change')}
+    // onSwiper={(swiper) => console.log(swiper)}
+    // onSlideChange={() => console.log('slide change')}
   >
-    <SwiperSlide className='bg-white w-[80%] '>
+
+    {scooter[0].map((scooter,index)=>
+       
+      <SwiperSlide className='bg-white w-[80%] '>
         { (isHidden) ?
         <div className='flex flex-col h-full w-ful items-center justify-center'>
-           <img className='object-center h-4/5 w-4/5 m-auto object-contain'  src={scooter[0][0].img}/>
+           <img className='object-center h-4/5 w-4/5 m-auto pb-6 object-contain'  src={scooter.img}/>
             
         </div>
-        :<span className=' w-16 h-16 bg-slate-500 absolute '>
-          <Motodesc info = {scooter[0]}/>
+        :<span className=' '>
+          <Motodesc info = {scooter}
+                    setCurrent = {setCurrent}
+                    />
         </span>
       }
     </SwiperSlide>
-    <SwiperSlide className=' '><img className='object-center h-full w-full sm:object-scale-down object-contain'  src={scooter[0][1].img}/></SwiperSlide>
-    <SwiperSlide className=' '><img className='object-center h-full w-full sm:object-scale-down object-contain'  src={scooter[0][2].img}/></SwiperSlide>
-    <SwiperSlide className=' '><img className='object-center h-full w-full sm:object-scale-down object-contain'  src={scooter[0][3].img}/></SwiperSlide>
+
+  )})
+
+    
     
   </Swiper>
-  <button className='absolute left-[50%] z-50 translate-x-[-50%] bottom-[50px] 
-            mx-auto bg-blue-400 p-1 rounded-xl text-center text-sm text-white
+  <button className='absolute left-[50%] z-50 translate-x-[-50%] 
+            bottom-[50px] font-semibold shadow-md
+            mx-auto bg-transparent p-1 rounded-md text-center text-sm text-blue-400 ring-1
             ' onClick={()=>{setIsHidden(!isHidden)
             console.log(isHidden)}}>Show more</button>
   </div>
