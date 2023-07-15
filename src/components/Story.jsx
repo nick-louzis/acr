@@ -1,12 +1,18 @@
 
 import family from '../assets/fam.avif'
 import Store from './Store'
+import ScrollMagic from "scrollmagic"
 
 function Story() {
+  const controller = new ScrollMagic.Controller()
+  const scene =  new ScrollMagic.Scene({
+    duration: 100,
+    triggerElement: '.story'
+  }).setClassToggle('.story', '.show').addTo(controller);
   return (
     <>
     
-    <div className='flex flex-col md:flex-row flex-1'>
+    <div className='flex flex-col md:flex-row  flex-1 story' id="story">
     <div className=' h-96 md:w-2/4 mx-auto my-auto'>
       <h2 className='font-semibold mx-8 mt-4 text-center  text-orange-500  text-2xl'>Our story</h2>
       <h3 className=' mx-8 mt-2 text-orange-400 md:text-[18px] lg:text-[20px]'>  Thanasis, Sarah and family, welcome you to the island of Skiathos. We have been renting, servicing, buying and selling motorbikes since 1989. Starting from a little coffee shop in the area of Acropolis and the name Acropolis has stuck with us ever since.  

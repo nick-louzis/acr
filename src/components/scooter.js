@@ -11,14 +11,7 @@ import people from '../assets/scooters/peoples.avif'
 const scooter= [
  [
 
-    {
-        name:"People S",
-        cc:125,
-        color:'Silver, Red, Blue',
-        licence:'AM',
-        passengers:'For 2 Persons',
-        img:people
-    },
+  
     {
         name:"Symphony ST 125cc",
         cc:125,
@@ -50,6 +43,14 @@ const scooter= [
         licence:'A1',
         passengers:'For 2 Persons',
         img:vision
+    },
+    {
+        name:"People S",
+        cc:125,
+        color:'Silver, Red, Blue',
+        licence:'AM',
+        passengers:'For 2 Persons',
+        img:people
     }
   ],
   [
